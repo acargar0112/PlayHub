@@ -17,10 +17,19 @@ class JuegoCreateView(CreateView):
     template_name = "juegos/juego_form.html"
     success_url = reverse_lazy("Listado")
 
+    """def getcontext_data(self, **kwargs):
+        context = super(JuegoCreateView, self).get_context_data()
+        context["titulo"] = "Agregar Juego"
+        return context
+        
+        CONTEXT_DATA son las variables que les pasamos para utilizar en el templates.
+        """
+
 class JuegoListView(ListView):
     model = Juego
     template_name = "juegos/juego_list.html"
     context_object_name = "juegos"
+    paginate_by = 4 # Para cada 10 juegos haga una página nueva
 
 class JuegoUpdateView(UpdateView):
     model = Juego
