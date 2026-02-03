@@ -1,0 +1,19 @@
+{% extends 'juegos/base.html' %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+
+<h1>HOME</h1>
+    <ul>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'Listado' %}">Listar Juego</a></li>
+        <li>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+    </ul>
+{% endblock %}

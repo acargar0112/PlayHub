@@ -1,0 +1,15 @@
+{% extends 'juegos/base.html' %}
+
+{% block titulo %}Eliminacione de Producto{% endblock %}
+
+{% block contenido %}
+
+    <h1>¿Estas seguro de borrar este juego?</h1>
+
+    <form method="Post">
+        {% csrf_token %}
+        <button type="submit">Si, borrar</button>
+        <a href="{% url 'Inicio' %}">Cancelar</a>
+    </form>
+
+{% endblock %}

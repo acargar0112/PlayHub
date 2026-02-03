@@ -1,0 +1,26 @@
+{% extends "juegos/base.html" %}
+
+{% block titulo %}Listado{% endblock %}
+
+{% block contenido %}
+
+<a href="{% url 'Formulario' %}">Crear</a>
+    <ul>
+        {% for juego in juegos %}
+            <li>
+                <p>Nombre: {{ juego.titulo }}</p>
+                <p>Plataforma: {{ juego.plataforma }}</p>
+                <p>Precio: {{ juego.precio }}€</p>
+                <p>Fecha: {{ juego.fecha_lanzamiento }}</p>
+            -------------------------------------- <br>
+                <a href="{% url 'Update' juego.pk %}">Editar</a>
+                <a href="{% url 'Delete' juego.pk %}">Borrar</a>
+            </li>
+        {% empty %}
+            <li>No hay juegos para listar</li>
+        {% endfor %}
+    </ul>
+
+<a href="{% url 'Inicio' %}">Volver</a>
+
+{% endblock %}

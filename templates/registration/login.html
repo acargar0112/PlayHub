@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body>
+    <h1>LOGIN</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit">Login</button>
+            <a href="{% url 'Inicio' %}">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>
