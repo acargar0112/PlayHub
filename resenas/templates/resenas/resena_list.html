@@ -1,0 +1,27 @@
+{% extends "juegos/base.html" %}
+
+{% block titulo %}Reseñas{% endblock %}
+
+{% block contenido %}
+
+<a href="{% url 'resena_create' %}">Crear reseña</a>
+    <ul>
+        {% for resena in resenas %}
+            <li>
+                <p>Juego: {{ resena.juego_titulo }}</p>
+                <p>Usuario: {{ resena.usuario_username }}</p>
+                <p>Puntuación: {{ resena.puntuacion }}</p>
+                <p>Comentario: {{ resena.comentario }}</p>
+                <p>Fecha: {{ resena.fecha }}</p>
+            -------------------------------------- <br>
+                <a href="{% url 'resena_update' resena.pk %}">Editar</a>
+                <a href="{% url 'resena_delete' resena.pk %}">Borrar</a>
+            </li>
+        {% empty %}
+            <li>No hay reseñas para listar</li>
+        {% endfor %}
+    </ul>
+
+<a href="{% url 'Inicio' %}">Volver</a>
+
+{% endblock %}

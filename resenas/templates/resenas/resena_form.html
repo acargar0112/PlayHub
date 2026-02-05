@@ -1,0 +1,14 @@
+{% extends 'juegos/base.html' %}
+
+{% block titulo %}Formulario Reseña{% endblock %}
+
+{% block contenido %}
+
+    <form method="post">
+        {%  csrf_token  %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="{% url 'resena_list' %}">Volver</a>
+{% endblock %}

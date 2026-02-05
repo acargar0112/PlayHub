@@ -46,12 +46,6 @@ def clean(self):
         raise ValidationError({precio}: "Precio tiene que ser mayor a 0.")
 """
 
-class Reseña(models.Model):
-    juego_titulo = models.CharField(max_length=100)
-    usuario_username = models.CharField(max_length=30)
-    puntuacion = models.IntegerField( validators=[MinValueValidator(1), MaxValueValidator(10)])
-    comentario = models.TextField(validators=[MinLengthValidator(50)])
-    fecha = models.DateField(auto_now_add=True)
 
 
 

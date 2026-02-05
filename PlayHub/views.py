@@ -41,3 +41,6 @@ class JuegoDeleteView(DeleteView):
     model = Juego
     template_name = "juegos/producto_confirm_delete.html"
     success_url = reverse_lazy("Listado")
+
+
+

@@ -1,18 +1,16 @@
 from django import forms
 from .models import Juego
 
+
 class JuegoForm(forms.ModelForm):
     class Meta:
         model = Juego
-        fields = ["titulo", "plataforma", "precio","fecha_lanzamiento"]
+        fields = ["titulo", "plataforma", "precio", "fecha_lanzamiento"]
         widgets = {
             'titulo': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Cyberpunk 2077',
-            }),"""
-            'plataforma': forms.TextInput(attrs={
-                'class': 'form-control',
-            }),"""
+            }),
             'precio': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': '99.99',
@@ -29,3 +27,6 @@ class JuegoForm(forms.ModelForm):
         if precio <= 0:
             raise forms.ValidationError("El precio debe ser mayor a 0")
         return precio
+
+
+    

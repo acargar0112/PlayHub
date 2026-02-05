@@ -1,10 +1,10 @@
 from django.contrib import admin
 from .models import Juego
-# Register your models here.
+
 
 @admin.register(Juego)
 class JuegoAdmin(admin.ModelAdmin):
-    ordering = ("-titulo",) #El orden que muestra los juegos
+    ordering = ("-titulo",)
     list_display = ("titulo", "precio", "fecha_lanzamiento")
     search_fields = ("titulo",)
     list_filter = ("plataforma",)

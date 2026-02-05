@@ -1,0 +1,15 @@
+{% extends 'juegos/base.html' %}
+
+{% block titulo %}Eliminar Reseña{% endblock %}
+
+{% block contenido %}
+
+    <h1>¿Estas seguro de borrar esta reseña?</h1>
+
+    <form method="Post">
+        {% csrf_token %}
+        <button type="submit">Si, borrar</button>
+        <a href="{% url 'resena_list' %}">Cancelar</a>
+    </form>
+
+{% endblock %}
